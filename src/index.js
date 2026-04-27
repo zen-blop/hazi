@@ -1,12 +1,13 @@
 import readline from "node:readline";
-import { FakeClient } from "./fakeClient.js";
+import { AnthropicClient } from "./anthropicClient.js";
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-const client = new FakeClient();
+const client = new AnthropicClient();
+
 const messages = [];
 
 function onToken(char) {

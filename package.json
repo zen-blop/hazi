@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/zen-blop/anthropic-chat-cli/issues"
   },
-  "homepage": "https://github.com/zen-blop/anthropic-chat-cli#readme"
+  "homepage": "https://github.com/zen-blop/anthropic-chat-cli#readme",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.91.1",
+    "dotenv": "^17.4.2"
+  }
 }
