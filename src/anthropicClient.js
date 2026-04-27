@@ -7,14 +7,27 @@ const anthropic = new Anthropic({
 
 export class AnthropicClient {
   async sendMessage(messages, onToken) {
-    const response = await anthropic.messages.create({
+    const stream = await anthropic.messages.create({
       model: "claude-haiku-4-5",
       max_tokens: 200,
-      messages: messages,
+      messages,
+      stream: true,
     });
 
-    const text = response.content[0].text;
+    let text = "";
 
-    return { text, streamed: false };
+    for await (const event of stream) {
+      if (event.type === "content_block_delta") {
+        const deltaText = event.delta.text ?? "";
+
+        text += deltaText;
+
+        if (onToken) {
+          onToken(deltaText);
+        }
+      }
+    }
+
+    return { text, streamed: true };
   }
 }

@@ -1,12 +1,12 @@
 import readline from "node:readline";
-import { AnthropicClient } from "./anthropicClient.js";
+import { RawHttpStreamingClient } from "./rawHttpStreamingClient.js";
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-const client = new AnthropicClient();
+const client = new RawHttpStreamingClient();
 
 const messages = [];
 
