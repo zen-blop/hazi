@@ -1,0 +1,21 @@
+{
+  "name": "anthropic-chat-cli",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zen-blop/anthropic-chat-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zen-blop/anthropic-chat-cli/issues"
+  },
+  "homepage": "https://github.com/zen-blop/anthropic-chat-cli#readme"
+}
